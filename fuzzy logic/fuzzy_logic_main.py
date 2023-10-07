@@ -6,7 +6,7 @@ from matplotlib.pyplot import MultipleLocator
 
 # input
 NS1 = np.arange(0, 1, 0.001, np.float32)
-IT1 = np.arange(0, 1, 0.001, np.float32)
+TR1 = np.arange(0, 1, 0.001, np.float32)
 CC1 = np.arange(0, 1, 0.001, np.float32)
 # print(NS1)
 # output
@@ -14,7 +14,7 @@ score1 = np.arange(0, 1, 0.01, np.float32)
 
 # # build fuzzy variables
 NS = ctrl.Antecedent(NS1, 'Normalized NS')
-IT = ctrl.Antecedent(IT1, 'Normalized IT')
+TR = ctrl.Antecedent(TR1, 'Normalized TR')
 CC = ctrl.Antecedent(CC1, 'Normalized CC')
 score = ctrl.Consequent(score1, 'Score')
 
@@ -26,12 +26,12 @@ NS_plt1 = fuzz.gaussmf(NS1, 0.0000, 0.15)
 NS_plt2 = fuzz.gaussmf(NS1, 0.7, 0.15)
 NS_plt3 = fuzz.gaussmf(NS1, 1.0, 0.15)
 
-IT['fast'] = fuzz.gaussmf(IT1, 0.0000, 0.14)
-IT['middle'] = fuzz.gaussmf(IT1, 0.327, 0.14)
-IT['slow'] = fuzz.gaussmf(IT1, 1.0, 0.14)
-IT_plt1 = fuzz.gaussmf(IT1, 0.0000, 0.14)
-IT_plt2 = fuzz.gaussmf(IT1, 0.327, 0.14)
-IT_plt3 = fuzz.gaussmf(IT1, 1.0, 0.14)
+TR['fast'] = fuzz.gaussmf(TR1, 0.0000, 0.14)
+TR['middle'] = fuzz.gaussmf(TR1, 0.327, 0.14)
+TR['slow'] = fuzz.gaussmf(TR1, 1.0, 0.14)
+TR_plt1 = fuzz.gaussmf(TR1, 0.0000, 0.14)
+TR_plt2 = fuzz.gaussmf(TR1, 0.327, 0.14)
+TR_plt3 = fuzz.gaussmf(TR1, 1.0, 0.14)
 
 CC['weak'] = fuzz.gaussmf(CC1, 0.2, 0.16)
 CC['middle'] = fuzz.gaussmf(CC1, 0.650, 0.16)
@@ -55,7 +55,7 @@ score_plt6 = fuzz.gaussmf(score1, 1.0, 0.13)
 # Visualization
 # NS.view()
 # # plt.savefig('./NS.pdf')
-# IT.view()
+# TR.view()
 # CC.view()
 # score.view()
 
@@ -63,91 +63,91 @@ score_plt6 = fuzz.gaussmf(score1, 1.0, 0.13)
 score.defuzzify_method = 'mom'
 
 # fuzzy rules
-rule1 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['fast'] & CC['strong'])), consequent=score['L$_5$'],
+rule1 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['fast'] & CC['strong'])), consequent=score['L$_5$'],
                   label='score=L$_5$')
 rule2 = ctrl.Rule(antecedent=(
-        (NS['average'] & IT['fast'] & CC['strong']) | (NS['sufficient'] & IT['middle'] & CC['strong']) | (
-        NS['sufficient'] & IT['slow'] & CC['strong'])), consequent=score['L$_4$'],
+        (NS['average'] & TR['fast'] & CC['strong']) | (NS['sufficient'] & TR['middle'] & CC['strong']) | (
+        NS['sufficient'] & TR['slow'] & CC['strong'])), consequent=score['L$_4$'],
     label='score=L$_4')
 rule3 = ctrl.Rule(antecedent=(
-        (NS['shortage'] & IT['fast'] & CC['strong']) | (NS['average'] & IT['middle'] & CC['strong']) | (
-        NS['shortage'] & IT['slow'] & CC['strong'])), consequent=score['L$_3$'],
+        (NS['shortage'] & TR['fast'] & CC['strong']) | (NS['average'] & TR['middle'] & CC['strong']) | (
+        NS['shortage'] & TR['slow'] & CC['strong'])), consequent=score['L$_3$'],
     label='score=L$_3$')
 rule4 = ctrl.Rule(antecedent=(
-        (NS['shortage'] & IT['middle'] & CC['strong']) | (NS['sufficient'] & IT['fast'] & CC['middle']) | (
-        NS['shortage'] & IT['fast'] & CC['middle'])), consequent=score['L$_2$'],
+        (NS['shortage'] & TR['middle'] & CC['strong']) | (NS['sufficient'] & TR['fast'] & CC['middle']) | (
+        NS['shortage'] & TR['fast'] & CC['middle'])), consequent=score['L$_2$'],
     label='score=L$_2$')
 rule5 = ctrl.Rule(antecedent=(
-        (NS['average'] & IT['slow'] & CC['strong']) | (NS['average'] & IT['fast'] & CC['middle']) | (
-        NS['sufficient'] & IT['middle'] & CC['middle']) | (NS['average'] & IT['middle'] & CC['middle']) | (
-                NS['shortage'] & IT['middle'] & CC['middle']) | (
-                NS['sufficient'] & IT['slow'] & CC['middle']) | (NS['average'] & IT['slow'] & CC['middle']) | (
-                NS['shortage'] & IT['slow'] & CC['middle']) | (NS['sufficient'] & IT['fast'] & CC['weak']) | (
-                NS['average'] & IT['fast'] & CC['weak']) | (NS['shortage'] & IT['fast'] & CC['weak'])),
+        (NS['average'] & TR['slow'] & CC['strong']) | (NS['average'] & TR['fast'] & CC['middle']) | (
+        NS['sufficient'] & TR['middle'] & CC['middle']) | (NS['average'] & TR['middle'] & CC['middle']) | (
+                NS['shortage'] & TR['middle'] & CC['middle']) | (
+                NS['sufficient'] & TR['slow'] & CC['middle']) | (NS['average'] & TR['slow'] & CC['middle']) | (
+                NS['shortage'] & TR['slow'] & CC['middle']) | (NS['sufficient'] & TR['fast'] & CC['weak']) | (
+                NS['average'] & TR['fast'] & CC['weak']) | (NS['shortage'] & TR['fast'] & CC['weak'])),
     consequent=score['L$_1$'],
     label='score=L$_1$')
 rule6 = ctrl.Rule(antecedent=(
-        (NS['sufficient'] & IT['middle'] & CC['weak']) | (NS['average'] & IT['middle'] & CC['weak']) | (
-        NS['shortage'] & IT['middle'] & CC['weak']) | (NS['sufficient'] & IT['slow'] & CC['weak']) | (
-                NS['average'] & IT['slow'] & CC['weak']) | (NS['shortage'] & IT['slow'] & CC['weak'])),
+        (NS['sufficient'] & TR['middle'] & CC['weak']) | (NS['average'] & TR['middle'] & CC['weak']) | (
+        NS['shortage'] & TR['middle'] & CC['weak']) | (NS['sufficient'] & TR['slow'] & CC['weak']) | (
+                NS['average'] & TR['slow'] & CC['weak']) | (NS['shortage'] & TR['slow'] & CC['weak'])),
     consequent=score['L$_0$'],
     label='score=L$_0$')
-# rule1 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['fast'] & CC['strong'])), consequent=score['L$_5$'],
+# rule1 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['fast'] & CC['strong'])), consequent=score['L$_5$'],
 #                   label='score=L$_5$')
-# rule2 = ctrl.Rule(antecedent=((NS['average'] & IT['fast'] & CC['strong'])), consequent=score['L$_4$'],
+# rule2 = ctrl.Rule(antecedent=((NS['average'] & TR['fast'] & CC['strong'])), consequent=score['L$_4$'],
 #                   label='score=L$_4')
-# rule3 = ctrl.Rule(antecedent=((NS['shortage'] & IT['fast'] & CC['strong'])), consequent=score['L$_3$'],
+# rule3 = ctrl.Rule(antecedent=((NS['shortage'] & TR['fast'] & CC['strong'])), consequent=score['L$_3$'],
 #                   label='score=L$_3$')
-# rule4 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['middle'] & CC['strong'])), consequent=score['L$_4$'],
+# rule4 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['middle'] & CC['strong'])), consequent=score['L$_4$'],
 #                   label='score=L$_4$')
-# rule5 = ctrl.Rule(antecedent=((NS['average'] & IT['middle'] & CC['strong'])), consequent=score['L$_3$'],
+# rule5 = ctrl.Rule(antecedent=((NS['average'] & TR['middle'] & CC['strong'])), consequent=score['L$_3$'],
 #                   label='score=L$_3$')
-# rule6 = ctrl.Rule(antecedent=((NS['shortage'] & IT['middle'] & CC['strong'])), consequent=score['L$_2$'],
+# rule6 = ctrl.Rule(antecedent=((NS['shortage'] & TR['middle'] & CC['strong'])), consequent=score['L$_2$'],
 #                   label='score=L$_2$')
-# rule7 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['slow'] & CC['strong'])), consequent=score['L$_4$'],
+# rule7 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['slow'] & CC['strong'])), consequent=score['L$_4$'],
 #                   label='score=L$_4$')
-# rule8 = ctrl.Rule(antecedent=((NS['average'] & IT['slow'] & CC['strong'])), consequent=score['L$_1$'],
+# rule8 = ctrl.Rule(antecedent=((NS['average'] & TR['slow'] & CC['strong'])), consequent=score['L$_1$'],
 #                   label='score=L$_1$')
-# rule9 = ctrl.Rule(antecedent=((NS['shortage'] & IT['slow'] & CC['strong'])), consequent=score['L$_3$'],
+# rule9 = ctrl.Rule(antecedent=((NS['shortage'] & TR['slow'] & CC['strong'])), consequent=score['L$_3$'],
 #                   label='score=L$_3$')
-# rule10 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['fast'] & CC['middle'])), consequent=score['L$_2$'],
+# rule10 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['fast'] & CC['middle'])), consequent=score['L$_2$'],
 #                    label='score=L$_2$')
-# rule11 = ctrl.Rule(antecedent=((NS['average'] & IT['fast'] & CC['middle'])), consequent=score['L$_1$'],
+# rule11 = ctrl.Rule(antecedent=((NS['average'] & TR['fast'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule12 = ctrl.Rule(antecedent=((NS['shortage'] & IT['fast'] & CC['middle'])), consequent=score['L$_2$'],
+# rule12 = ctrl.Rule(antecedent=((NS['shortage'] & TR['fast'] & CC['middle'])), consequent=score['L$_2$'],
 #                    label='score=L$_2$')
-# rule13 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['middle'] & CC['middle'])), consequent=score['L$_1$'],
+# rule13 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['middle'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule14 = ctrl.Rule(antecedent=((NS['average'] & IT['middle'] & CC['middle'])), consequent=score['L$_1$'],
+# rule14 = ctrl.Rule(antecedent=((NS['average'] & TR['middle'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule15 = ctrl.Rule(antecedent=((NS['shortage'] & IT['middle'] & CC['middle'])), consequent=score['L$_1$'],
+# rule15 = ctrl.Rule(antecedent=((NS['shortage'] & TR['middle'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule16 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['slow'] & CC['middle'])), consequent=score['L$_1$'],
+# rule16 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['slow'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule17 = ctrl.Rule(antecedent=((NS['average'] & IT['slow'] & CC['middle'])), consequent=score['L$_1$'],
+# rule17 = ctrl.Rule(antecedent=((NS['average'] & TR['slow'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule18 = ctrl.Rule(antecedent=((NS['shortage'] & IT['slow'] & CC['middle'])), consequent=score['L$_1$'],
+# rule18 = ctrl.Rule(antecedent=((NS['shortage'] & TR['slow'] & CC['middle'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule19 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['fast'] & CC['weak'])), consequent=score['L$_1$'],
+# rule19 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['fast'] & CC['weak'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule20 = ctrl.Rule(antecedent=((NS['average'] & IT['fast'] & CC['weak'])), consequent=score['L$_1$'],
+# rule20 = ctrl.Rule(antecedent=((NS['average'] & TR['fast'] & CC['weak'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule21 = ctrl.Rule(antecedent=((NS['shortage'] & IT['fast'] & CC['weak'])), consequent=score['L$_1$'],
+# rule21 = ctrl.Rule(antecedent=((NS['shortage'] & TR['fast'] & CC['weak'])), consequent=score['L$_1$'],
 #                    label='score=L$_1$')
-# rule22 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['middle'] & CC['weak'])), consequent=score['L$_0$'],
+# rule22 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['middle'] & CC['weak'])), consequent=score['L$_0$'],
 #                    label='score=L$_0$')
-# rule23 = ctrl.Rule(antecedent=((NS['average'] & IT['middle'] & CC['weak'])), consequent=score['L$_0$'],
+# rule23 = ctrl.Rule(antecedent=((NS['average'] & TR['middle'] & CC['weak'])), consequent=score['L$_0$'],
 #                    label='score=L$_0$')
-# rule24 = ctrl.Rule(antecedent=((NS['shortage'] & IT['middle'] & CC['weak'])), consequent=score['L$_0$'],
+# rule24 = ctrl.Rule(antecedent=((NS['shortage'] & TR['middle'] & CC['weak'])), consequent=score['L$_0$'],
 #                    label='score=L$_0$')
-# rule25 = ctrl.Rule(antecedent=((NS['sufficient'] & IT['slow'] & CC['weak'])), consequent=score['L$_0$'],
+# rule25 = ctrl.Rule(antecedent=((NS['sufficient'] & TR['slow'] & CC['weak'])), consequent=score['L$_0$'],
 #                    label='score=L$_0$')
-# rule26 = ctrl.Rule(antecedent=((NS['average'] & IT['slow'] & CC['weak'])), consequent=score['L$_0$'],
+# rule26 = ctrl.Rule(antecedent=((NS['average'] & TR['slow'] & CC['weak'])), consequent=score['L$_0$'],
 #                    label='score=L$_0$')
-# rule27 = ctrl.Rule(antecedent=((NS['shortage'] & IT['slow'] & CC['weak'])), consequent=score['L$_0$'],
+# rule27 = ctrl.Rule(antecedent=((NS['shortage'] & TR['slow'] & CC['weak'])), consequent=score['L$_0$'],
 #                    label='score=L$_0$')
 
-# System and operating environment initialization
+# System and operating environment inTRialization
 # rule = [rule1, rule2, rule3, rule4, rule5, rule6, rule7, rule8, rule9, rule10, rule11, rule12, rule13, rule14, rule15,
 #         rule16, rule17, rule18, rule19, rule20, rule21, rule22, rule23, rule24, rule25, rule26, rule27]
 rule = [rule1, rule2, rule3, rule4, rule5, rule6]
@@ -155,15 +155,15 @@ score_ctrl = ctrl.ControlSystem(rule)
 level = ctrl.ControlSystemSimulation(score_ctrl)
 
 # input Output
-print("\nplease input NS, IT, CC!!!")
+print("\nplease input NS, TR, CC!!!")
 # input_NS = input('NS:')
-# input_IT = input('IT:')
+# input_TR = input('TR:')
 # input_CC = input('CC:')
 input_NS = 0.6
-input_IT = 0.1
+input_TR = 0.1
 input_CC = 0.9
 level.input['Normalized NS'] = float(input_NS)
-level.input['Normalized IT'] = float(input_IT)
+level.input['Normalized TR'] = float(input_TR)
 level.input['Normalized CC'] = float(input_CC)
 level.compute()
 print('level 为：', level.output['Score'])
@@ -186,7 +186,7 @@ fig, ax0 = plt.subplots(figsize=(4, 3))
 #          }
 # plt1
 # NS.view()
-# IT.view(), CC.view(),
+# TR.view(), CC.view(),
 # score.view(sim=level)
 # plt.show()
 # plt2
@@ -213,13 +213,13 @@ color = ['#1f77b4', '#ff7f0e', '#2ca02c']
 # plt.savefig('C:///Users/DELL/Desktop/新建文件夹/NS_sufficient.png')
 # plt.show()
 # print('----------TR-----------')
-# # ax0.plot(IT1, IT_plt1, label='slow', marker='^', markersize=12, markevery=200, color='blue')
-# # ax0.plot(IT1, IT_plt2, label='medium', marker='^', markersize=12, markevery=200, color='blue')
-# ax0.plot(IT1, IT_plt3, label='fast', marker='^', markersize=12, markevery=200, color='blue')
+# # ax0.plot(TR1, TR_plt1, label='slow', marker='^', markersize=12, markevery=200, color='blue')
+# # ax0.plot(TR1, TR_plt2, label='medium', marker='^', markersize=12, markevery=200, color='blue')
+# ax0.plot(TR1, TR_plt3, label='fast', marker='^', markersize=12, markevery=200, color='blue')
 # # ax0.plot([0.327,0.327],[0.01,1.0], color='black', linestyle='--',linewidth=0.5)
-# # ax0.plot(IT1, IT_plt1, label = 'fast', color = 'black')
-# # ax0.plot(IT1, IT_plt2, label = 'medium', color = 'black')
-# # ax0.plot(IT1, IT_plt3, label= 'slow', color = 'black')
+# # ax0.plot(TR1, TR_plt1, label = 'fast', color = 'black')
+# # ax0.plot(TR1, TR_plt2, label = 'medium', color = 'black')
+# # ax0.plot(TR1, TR_plt3, label= 'slow', color = 'black')
 # # plt.xlabel('Normalized TR', font2)
 # # plt.ylabel('Membership', font2)
 # # plt.ylim(0, 1.5)
