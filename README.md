@@ -4,27 +4,25 @@ This repository is for our IEEE IOT-J 2023 paper "Adaptive Batch Homomorphic Enc
 
 Our framework consists of the following three key components.
 
-![1696649552565](C:\Users\DELL\AppData\Local\Temp\1696649552565.png)
+![framework](D:\GitHubFile\AdaptiveBatchHE\fig\framework.PNG)
 
 ## Clustering of Clients based on Sparsity of CNNs
 
-The code in the folder CNN Sparsity is used to obtain the sparse vectors of the client.
+The code in the folder cnn sparsity is used to obtain the sparse vectors of the client.
 
-![1696649962215](C:\Users\DELL\AppData\Local\Temp\1696649962215.png)
-
-
+![sparsity](D:\GitHubFile\AdaptiveBatchHE\fig\sparsity.PNG)
 
 ## Selection of HE Key Size for Each Client based on Fuzzy Logic
 
-The code in the folder Fuzzy Logic is used to obtain the key size of the client.
+The code in the folder fuzzy logic is used to obtain the key size of the client.
 
-![1696650038498](C:\Users\DELL\AppData\Local\Temp\1696650038498.png)
+![fuzzy](D:\GitHubFile\AdaptiveBatchHE\fig\fuzzy.PNG)
 
 ## Accuracy-lossless Batch Encryption and Aggregation
 
-The code in the folder Batch Encryption is used to train model.
+The code in the folder batch encryption is used to train model.
 
-![1696650149850](C:\Users\DELL\AppData\Local\Temp\1696650149850.png)
+![batch](D:\GitHubFile\AdaptiveBatchHE\fig\batch.PNG)
 
 The details are shown in the paper.
 
