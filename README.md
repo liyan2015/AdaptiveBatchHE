@@ -10,19 +10,19 @@ Our framework consists of the following three key components.
 
 The code in the folder cnn sparsity is used to obtain the sparse vectors of the client.
 
-![sparsity](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/fig/sparsity.PNG)
+![sparsity](./fig/sparsity.PNG)
 
 ## Selection of HE Key Size for Each Client based on Fuzzy Logic
 
 The code in the folder fuzzy logic is used to obtain the key size of the client.
 
-![fuzzy](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/fig/fuzzy.PNG)
+![fuzzy](./fig/fuzzy.PNG)
 
 ## Accuracy-lossless Batch Encryption and Aggregation
 
 The code in the folder batch encryption is used to train model.
 
-![batch](D:\GitHubFile\AdaptiveBatchHE\fig\batch.PNG)
+![batch](./fig/batch.PNG)
 
 The details are shown in the paper.
 
