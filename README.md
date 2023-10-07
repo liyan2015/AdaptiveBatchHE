@@ -46,6 +46,7 @@ To run the code, it needs some libraies:
 - Python >= 3.8
 - Pytorch >= 1.10
 - torchvision >= 0.11
+- phe >= 1.5
 
 Our environment is shown in the file, named `environment.yaml`.
 
