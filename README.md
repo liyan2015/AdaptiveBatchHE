@@ -4,13 +4,21 @@ This repository is for our IEEE IOT-J 2023 paper "Adaptive Batch Homomorphic Enc
 
 Our framework consists of the following three key components.
 
-![framework](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/fig/framework.PNG)
+<div align=center>
+
+![framework](./fig/framework.PNG)
+
+</div>
 
 ## Clustering of Clients based on Sparsity of CNNs
 
 The code in the folder cnn sparsity is used to obtain the sparse vectors of the client.
 
+<div align=center>
+
 ![sparsity](./fig/sparsity.PNG)
+
+</div>
 
 ## Selection of HE Key Size for Each Client based on Fuzzy Logic
 
