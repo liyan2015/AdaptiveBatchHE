@@ -9,21 +9,11 @@ Goals of this repository:
 
 Our framework consists of the following three key components.
 
-<div align=center>
 
-![framework](./fig/framework.PNG)
-
-</div>
 
 ## Clustering of Clients based on Sparsity of CNNs
 
 The code in the folder *cnn sparsity* is used to obtain the sparse vectors of the client.
-
-<div align=center>
-
-![sparsity](./fig/sparsity.PNG)
-
-</div>
 
 `federated_main.py` is the main function.
 
@@ -32,8 +22,6 @@ The input is the path of the dataset.
 ## Selection of HE Key Size for Each Client based on Fuzzy Logic
 
 The code in the folder *fuzzy logic* is used to obtain the key size of the client.
-
-![fuzzy](./fig/fuzzy.PNG)
 
 `fuzzy_logic_main.py` is the main function.
 
@@ -44,8 +32,6 @@ Their values are between 0 and 1.
 ## Accuracy-lossless Batch Encryption and Aggregation
 
 The code in the folder *batch encryption* is used to train model.
-
-![batch](./fig/batch.PNG)
 
 `federated_experiment_main.py` is the main function.
 
