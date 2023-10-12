@@ -7,7 +7,7 @@ This repository provides the implementation of the paper ["Adaptive Batch Homomo
 Our framework consists of the following three key components:
   
 <p align="center">
-<img src="fig/framework.jpg" align="center" width="25%"/>
+<img src="fig/framework.jpg" align="center" width="100%"/>
 </p>
 
 <!-- end intro -->
@@ -15,7 +15,7 @@ Our framework consists of the following three key components:
 ## Clustering of Clients based on Sparsity of CNNs
 
 <p align="center">
-<img src="fig/sparsity.jpg" align="center" width="25%"/>
+<img src="fig/sparsity.jpg" align="center" width="100%"/>
 </p>
 
 The code in the folder *cnn sparsity* is used to obtain the sparse vectors of the client.
@@ -27,7 +27,7 @@ The input is the path of the dataset.
 ## Selection of HE Key Size for Each Client based on Fuzzy Logic
 
 <p align="center">
-<img src="fig/fuzzyworkflow.jpg" align="center" width="25%"/>
+<img src="fig/fuzzyworkflow.jpg" align="center" width="100%"/>
 </p>
 
 The code in the folder *fuzzy logic* is used to obtain the key size of the client.
@@ -41,7 +41,7 @@ Their values are between 0 and 1.
 ## Accuracy-lossless Batch Encryption and Aggregation
 
 <p align="center">
-<img src="fig/batchencry_server_client.jpg" align="center" width="25%"/>
+<img src="fig/batchencry_server_client.jpg" align="center" width="100%"/>
 </p>
 
 The code in the folder *batch encryption* is used to train model.
