@@ -17,7 +17,7 @@ Our framework consists of the following three key components:
 <!-- start sparsity -->
 
 <p align="center">
-<img src="fig/sparsity.jpg" align="center" width="65%"/>
+<img src="fig/sparsity.jpg" align="center" width="55%"/>
 </p>
 
 The code in the folder [CNN Sparisty](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/CNN%20Sparisty) is for determining the sparsity vectors of clients.
