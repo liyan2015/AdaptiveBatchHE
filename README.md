@@ -12,7 +12,9 @@ Our framework consists of the following three key components:
 
 <!-- end intro -->
 
-## Clustering of Clients based on Sparsity of CNNs
+## 1. Clustering of Clients based on Sparsity of CNNs
+
+<!-- start sparsity -->
 
 <p align="center">
 <img src="fig/sparsity.jpg" align="center" width="100%"/>
@@ -24,7 +26,11 @@ The code in the folder *cnn sparsity* is used to obtain the sparse vectors of th
 
 The input is the path of the dataset.
 
-## Selection of HE Key Size for Each Client based on Fuzzy Logic
+<!-- end sparsity -->
+
+## 2. Selection of HE Key Size for Each Client based on Fuzzy Logic
+
+<!-- start fuzzy -->
 
 <p align="center">
 <img src="fig/fuzzyworkflow.jpg" align="center" width="100%"/>
@@ -38,7 +44,11 @@ There are three input, namely, input_NS, input_TR, and input CC.
 
 Their values are between 0 and 1.
 
-## Accuracy-lossless Batch Encryption and Aggregation
+<!-- end fuzzy -->
+
+## 3. Accuracy-lossless Batch Encryption and Aggregation
+
+<!-- start batch -->
 
 <p align="center">
 <img src="fig/batchencry_server_client.jpg" align="center" width="100%"/>
@@ -52,6 +62,8 @@ This component is used for batch encryption under FL training.
 
 The details of the three components are shown in the paper.
 
+<!-- end sparsity -->
+
 ## Prerequisites
 
 To run the code, it needs some libraies:
@@ -62,4 +74,22 @@ To run the code, it needs some libraies:
 - phe >= 1.5
 
 Our environment is shown in the file, named `environment.yaml`.
+
+## Citing
+
+<!-- start citation -->
+
+If you use this repository, please cite:
+```bibtex
+@article{han2023adaptiveBatchHE,
+  title={Adaptive Batch Homomorphic Encryption for Joint Federated Learning in Cross-Device Scenarios},
+  author={Han, Junhao and Yan, Li},
+  journal={IEEE Internet of Things Journal},
+  volume={Early Access},
+  year={2023},
+  publisher={IEEE}
+}
+```
+
+<!-- end citation -->
 
