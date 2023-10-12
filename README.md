@@ -7,7 +7,7 @@ This repository provides the implementation of the paper ["Adaptive Batch Homomo
 Our framework consists of the following three key components:
   
 <p align="center">
-<img src="fig/framework.jpg" align="center" width="100%"/>
+<img src="fig/framework.jpg" align="center" width="85%"/>
 </p>
 
 <!-- end intro -->
@@ -17,10 +17,10 @@ Our framework consists of the following three key components:
 <!-- start sparsity -->
 
 <p align="center">
-<img src="fig/sparsity.jpg" align="center" width="100%"/>
+<img src="fig/sparsity.jpg" align="center" width="65%"/>
 </p>
 
-The code in the folder *cnn sparsity* is used to obtain the sparse vectors of the client.
+The code in the folder [CNN Sparisty](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/CNN%20Sparisty) is for determining the sparsity vectors of clients.
 
 `federated_main.py` is the main function.
 
@@ -36,11 +36,11 @@ The input is the path of the dataset.
 <img src="fig/fuzzyworkflow.jpg" align="center" width="100%"/>
 </p>
 
-The code in the folder *fuzzy logic* is used to obtain the key size of the client.
+The code in the folder [fuzzy logic](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/fuzzy%20logic) is for determining the HE key size of clients.
 
 `fuzzy_logic_main.py` is the main function.
 
-There are three input, namely, input_NS, input_TR, and input CC.
+There are three inputs: `input_NS`, `input_TR`, and `input_CC`.
 
 Their values are between 0 and 1.
 
@@ -54,11 +54,9 @@ Their values are between 0 and 1.
 <img src="fig/batchencry_server_client.jpg" align="center" width="100%"/>
 </p>
 
-The code in the folder *batch encryption* is used to train model.
+The code in the folder [batch encryption](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/batch%20encryption) is for accuracy-lossless batch encryption and aggregation of model parameters for FL training.
 
 `federated_experiment_main.py` is the main function.
-
-This component is used for batch encryption under FL training. 
 
 The details of the three components are shown in the paper.
 
