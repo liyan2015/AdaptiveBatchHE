@@ -6,7 +6,7 @@ This repository provides the implementation of the paper ["Adaptive Batch Homomo
 
 | ![1](fig/non_iid_three_trainingtime.jpg) | ![2](fig/non_iid_epochs_accuracy.jpg) | ![3](fig/non_iid_communication_cost.jpg) | ![4](fig/batchencryption_epochs_accuracy.jpg) |
 |:--:|:--:|:--:|:--:| 
-| *Training time over 100 epochs* | *Testing accuracy over epochs* | *Communication cost in one epoch* | *Cost efficiency under various key sizes* |
+| *Training time over 100 epochs* | *Testing accuracy over epochs* | *Comm. cost in one epoch* | *Cost efficiency under various HE key sizes* |
 
 
 Our framework consists of the following three key components:
