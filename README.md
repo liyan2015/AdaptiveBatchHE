@@ -10,16 +10,16 @@ This repository provides the implementation of the paper ["Adaptive Batch Homomo
 
 <table>
   <tr>
-    <td><img src="fig/non_iid_three_trainingtime.jpg" width="300"></td>
-    <td><img src="fig/non_iid_epochs_accuracy.jpg" width="300"></td>
-    <td><img src="fig/non_iid_communication_cost.jpg" width="300" ></td>
-    <td><img src="fig/batchencryption_epochs_accuracy.jpg" width="300"></td>
+    <td width="25%"><img src="fig/non_iid_three_trainingtime.jpg" width="300"></td>
+    <td width="25%"><img src="fig/non_iid_epochs_accuracy.jpg" width="300"></td>
+    <td width="25%"><img src="fig/non_iid_communication_cost.jpg" width="300" ></td>
+    <td width="25%"><img src="fig/batchencryption_epochs_accuracy.jpg" width="300"></td>
   </tr>
   <tr>
-    <td>Training time over 100 epochs             </td>
-    <td>Testing accuracy over epochs              </td>
-    <td>Communication cost in one epoch           </td>
-    <td>Cost efficiency under various HE key sizes</td>
+    <td width="25%">Training time over 100 epochs</td>
+    <td width="25%">Testing accuracy over epochs</td>
+    <td width="25%">Communication cost in one epoch</td>
+    <td width="25%">Cost efficiency under various HE key sizes</td>
   </tr>
 </table>
 
