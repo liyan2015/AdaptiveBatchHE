@@ -215,12 +215,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # global setting
     parser.add_argument('--experiment', type=str, default='paillier',
-                        choices=['plain', 'paillier', 'batch', 'onlyConvert'])
-    parser.add_argument('--num_clients', type=int, default=10)
-    parser.add_argument('--num_epochs', type=int, default=1)
-    parser.add_argument('--batch_size', type=int, default=10)
-    parser.add_argument('--dataset', type=str, default='cifar10', help="name of dataset")
-    parser.add_argument('--gpu', type=int, default=0, help="GPU ID, -1 for CPU")
+                        choices=['plain', 'paillier', 'batch', 'onlyConvert']) # choose experiment mode
+    parser.add_argument('--num_clients', type=int, default=10)   # choose the number of clients
+    parser.add_argument('--num_epochs', type=int, default=1)     # choose the global epoch
+    parser.add_argument('--batch_size', type=int, default=10)    # choose the encryption batch size
+    parser.add_argument('--dataset', type=str, default='cifar10', help="name of dataset") # choose the dataset
+    parser.add_argument('--gpu', type=int, default=0, help="GPU ID, -1 for CPU")  # choose gpu
     # local setting
     parser.add_argument('--lr', type=float, default=0.015, help='learning rate')
     parser.add_argument('--local_ep', type=int, default=10, help="the number of local epochs: E")
