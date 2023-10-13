@@ -75,8 +75,7 @@ The code in the folder [batch encryption](https://github.com/liyan2015/AdaptiveB
 `federated_experiment_main.py` is the main function.
 
 When running the code, it needs to set a reasonable hyperparameter K, whose default value is 4.
-
-For specific settings, please refer to the notes in the code.
+For specific settings, please refer to the comments in the code.
 
 The details of the three components are shown in the paper.
 
