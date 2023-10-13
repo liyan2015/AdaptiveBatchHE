@@ -17,9 +17,9 @@ This repository provides the implementation of the paper ["Adaptive Batch Homomo
   </tr>
   <tr>
     <td>Training time over 100 epochs</td>
-    <td>Testing accuracy over epochs</td>
-    <td>Communication cost in one epoch</td>
-    <td>Cost efficiency under various HE key sizes</td>
+    <td>Training time over 100 epochs</td>
+    <td>Training time over 100 epochs</td>
+    <td>Training time over 100 epochs</td>
   </tr>
 </table>
 
