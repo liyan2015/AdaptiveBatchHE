@@ -21,7 +21,7 @@ This repository provides the implementation of the paper ["Adaptive Batch Homomo
 
 
 Our framework consists of the following three key components:
-  
+
 <p align="center">
 <img src="fig/framework.jpg" align="center" width="85%"/>
 </p>
@@ -74,6 +74,8 @@ The code in the folder [batch encryption](https://github.com/liyan2015/AdaptiveB
 
 `federated_experiment_main.py` is the main function.
 
+When running the code, it needs to set a reasonable hyperparameter K, whose default value is 4.
+
 The details of the three components are shown in the paper.
 
 <!-- end sparsity -->
@@ -86,6 +88,7 @@ To run the code, it needs some libraies:
 - Pytorch >= 1.10
 - torchvision >= 0.11
 - phe >= 1.5
+- skfuzzy >= 0.4
 
 Our environment is shown in the file, named `environment.yaml`.
 
