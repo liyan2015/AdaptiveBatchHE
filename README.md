@@ -4,8 +4,8 @@
 
 This repository provides the implementation of the paper ["Adaptive Batch Homomorphic Encryption for Joint Federated Learning in Cross-Device Scenarios"](https://ieeexplore.ieee.org/document/10275042), which is published in IEEE INTERNET OF THINGS JOURNAL. In this paper, we propose an adaptive batch HE framework for cross-device FL, which determines cost-efficient and sufficiently secure encryption strategies for clients with heterogeneous data and system capabilities. Our framework can achieve comparable accuracy to plain HE (i.e., encryption applied per gradient), while reducing training time by 3×-31×, and communication cost by 45×-66×.
 
-| ![non_iid_three_trainingtime.jpg](fig/non_iid_three_trainingtime.jpg) | ![non_iid_epochs_accuracy.jpg](fig/non_iid_epochs_accuracy.jpg) | ![non_iid_communication_cost.jpg](fig/non_iid_communication_cost.jpg) | ![batchencryption_epochs_accuracy.jpg](fig/batchencryption_epochs_accuracy.jpg) |
-|:--:| :--:| :--:| :--:| 
+| ![1](fig/non_iid_three_trainingtime.jpg) | ![2](fig/non_iid_epochs_accuracy.jpg) | ![3](fig/non_iid_communication_cost.jpg) | ![4](fig/batchencryption_epochs_accuracy.jpg) |
+|:--:|:--:|:--:|:--:| 
 | *Training time over 100 epochs* | *Testing accuracy over epochs* | *Communication cost in one epoch* | *Cost efficiency under various HE key sizes* |
 
 
