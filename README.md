@@ -100,11 +100,13 @@ If you use this repository, please cite:
   title={Adaptive Batch Homomorphic Encryption for Joint Federated Learning in Cross-Device Scenarios},
   author={Han, Junhao and Yan, Li},
   journal={IEEE Internet of Things Journal},
-  volume={Early Access},
+  volume={11},
+  number={6},
+  pages={9338--9354},
   year={2023},
-  publisher={IEEE}
 }
 ```
+List of publications that cite this work: [Google Scholar](https://scholar.google.com/scholar?oi=bibs&hl=en&cites=6612438289564584629)
 
 <!-- end citation -->
 
