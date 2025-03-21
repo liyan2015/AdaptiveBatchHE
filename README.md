@@ -36,7 +36,7 @@ Our framework consists of the following three key components:
 <img src="fig/sparsity.jpg" align="center" width="40%"/>
 </p>
 
-The code in the folder [CNN Sparisty](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/CNN%20Sparisty) is for determining the sparsity vectors of clients.
+The codes in [CNN Sparisty](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/CNN%20Sparisty) are for determining the sparsity vectors of clients.
 
 `federated_main.py` is the main function.
 
@@ -52,7 +52,7 @@ The input is the path of the dataset.
 <img src="fig/fuzzyworkflow.jpg" align="center" width="100%"/>
 </p>
 
-The code in the folder [fuzzy logic](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/fuzzy%20logic) is for determining the HE key size of clients.
+The codes in [fuzzy logic](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/fuzzy%20logic) are for determining the HE key size of clients.
 
 `fuzzy_logic_main.py` is the main function.
 
@@ -70,17 +70,17 @@ Their values are between 0 and 1.
 <img src="fig/batchencry_server_client.jpg" align="center" width="100%"/>
 </p>
 
-The code in the folder [batch encryption](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/batch%20encryption) is for accuracy-lossless batch encryption and aggregation of model parameters for FL training.
+The codes in [batch encryption](https://github.com/liyan2015/AdaptiveBatchHE/tree/main/batch%20encryption) are for accuracy-lossless batch encryption and aggregation of model parameters during FL training.
 
 `federated_experiment_main.py` is the main function.
 
-The code needs a proper hyperparameter K to run correctly, of which reason has been explained with detail in the paper. The default K value is 4. For specific settings, please refer to the comments in the code.
+The main function needs a proper hyperparameter K to run correctly, of which reason has been explained with detail in the paper. The default K value is 4. For specific settings, please refer to the comments in the codes.
 
 <!-- end batch -->
 
 ## Prerequisites
 
-To run the code, it needs some libraies:
+To run the code, the following libraies are needed:
 
 - Python >= 3.8
 - Pytorch >= 1.10
@@ -88,7 +88,7 @@ To run the code, it needs some libraies:
 - phe >= 1.5
 - skfuzzy >= 0.4
 
-Our environment is shown in the file, named `environment.yaml`.
+Check `environment.yaml` for details.
 
 ## Citing
 
